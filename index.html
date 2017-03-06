@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body,h1,h2,h3,h4,h5,h6,p {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto";
+            box-sizing: content-box;
+        }
+        
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .full-width {
+            width: 100%;            
+        }
+        
+        .fixed-width {
+            width: 1200px;
+            margin: auto;
+        }
+        
+        .col-3 {
+            float: left;
+            width: 380px;
+            padding-left: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .col-4 {
+            float: left;
+            width: 280px;
+            padding-left: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        nav {
+            height: 45px;
+            background-color: #000;
+        }
+        
+        nav .logo {
+            float: left;
+            color: aliceblue;
+            line-height: 45px;
+        }
+        
+        nav .menu {
+            float: right;
+        }
+        
+        nav .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav .menu li {
+            float: left;
+            list-style: none;
+        }
+        
+        nav .menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            line-height: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 14px;
+            transition: all .3s;
+        }
+        
+        nav .menu a:hover {
+            background-color: #555;
+        }
+        
+        header {
+            height: 750px;
+            background-image: url(image/winterlake.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: table;
+        }
+        
+        header .overlay {
+            height: 750px;
+            background-color: rgba(0, 0, 0, .4);
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        header .content {
+            color: #fff;
+            /*            width: 400px;*/
+            margin: auto;
+            text-align: center;
+        }
+        
+        header .content h1 {
+            color: #fff;
+            font-size: 50px;
+        }
+        
+        header .content a {
+            display: inline-block;
+            width: 160px;
+            color: #fff;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #ff004e;
+            text-decoration: none;
+        }
+        
+        header .content p {
+            color: white;
+            width: 700px;
+            margin: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        #about {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        
+        #about h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        #about .col-3 {
+            padding-top: 70px;
+        }
+        
+        #about .col-3 h3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        #about .col-3 p {
+            line-height: 2em;
+        }
+        
+        #works {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;            
+            background-color: black;
+            color: aliceblue;
+            
+        }
+        
+        #works h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        
+        #works img{
+            width:250px;                ;
+        }
+        
+        #works .col-3 {
+            padding-top: 70px;
+        }
+        
+        #works .col-3 h3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        #works .col-3 p {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            line-height: 2em;
+        }
+        #service {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;            
+            
+        }
+        
+        #service h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        
+        #service .col-4 {
+            padding-top: 70px;
+        }
+        
+        #service .col-4 h3 {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        #service .col-4 p {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            line-height: 2em;
+        }
+        footer{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: #333;
+            color: #eee;
+        }
+        footer a{
+            color: #eee;
+            text-decoration: none;
+            margin-left: 30px;
+        }
+        footer .copyrights {
+            float:left;
+        }
+        footer .sns{
+            float: right;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="full-width">
+        <div class="fixed-width">
+            <div class="logo">LOGO</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="full-width">
+        <div class="overlay">
+            <div class="content">
+                <h1>DESIGN</h1>
+                <P>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, repudiandae temporibus! Laboriosam debitis officia tempore. Sit, nisi. Similique autem, laboriosam consectetur nam reprehende
+                    <a href="#">
+              GET Started              
+          </a>
+                </P>
+            </div>
+        </div>
+    </header>
+    <div id="about" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>About us</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio sapiente repudiandae, magnam quos cumque, sunt, quibusdam eaque asperiores nihil dolor fugit aliquid iste facilis pariatur sed omnis rerum ab.
+            </p>
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-university fa-2x"> 
+            </span></div>
+                <h3>qwert</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio sapiente repudiandae, magnam quos cumque, sunt, quibusdam
+                </p>
+            </div>
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-car fa-2x
+
+         " aria-hidden="true"></span></div>
+                <h3>qwert</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio sapiente repudiandae, magnam quos cumque, sunt, quibusdam
+                </p>
+            </div>
+            <div class="col-3">
+                <div class="icon"><i class="fa fa-address-book-o fa-2x" aria-hidden="true"></i></div>
+                <h3>qwert</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio sapiente repudiandae, magnam quos cumque, sunt, quibusdam
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="works" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>WORKS</h2>
+            <div class="col-3">
+                <img src="image/car.jpg" >
+                <h3>qwert</h3>
+            </div>
+            <div class="col-3">
+                <img src="image/suv.png">
+                <h3>uuuuuuu</h3>
+
+            </div>
+            <div class="col-3">
+                <img src="image/truck.jpg">
+                <h3>sdflaj;</h3>
+            </div>
+        </div>
+    </div>
+    
+        <div id="about" class="full-width clearfix">
+        <div class="fixed-width">
+            <h2>SERVICE</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero optio sapiente repudiandae, magnam quos cumque, sunt, quibusdam eaque asperiores nihil dolor fugit aliquid iste facilis pariatur sed omnis rerum ab.
+            </p>
+            <div class="col-4">
+                <img src="image/S01.png">
+                <h3>AAAA</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="image/S02.png">
+                <h3>BBBB</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                </p>
+            </div>
+            <div class="col-4">
+                 <img src="image/S02.png">
+                <h3>CCCC</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="image/S02.png">
+                <h3>DDDD</h3>
+                <p>s
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer class="full-width">
+      <div class="fixed-width">
+       <div class="copyrights">
+           xxx DESIGN &copy; 2017
+       </div>                
+       <div class="sns">  
+            <a href="#"class="fa fa-facebook fa-lg"></a>
+            <a href="#"class="fa fa-instagram fa-lg"></a>
+            <a href="#"class="fa fa-twitter fa-lg"></a>
+            <a href="#"class="fa fa-github fa-lg"></a>    
+       </div>
+      </div>      
+    </footer>
+</body>
+</html>
